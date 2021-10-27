@@ -42,7 +42,7 @@ core() {
         ;;
       --public)
         if [ ! -f "$PWD/$private_pem_filename" ]; then
-          log_error "you should generate rsa private key first"
+          log::error "you should generate rsa private key first"
           exit 1
         fi
 
@@ -51,7 +51,7 @@ core() {
         ;;
       --cert)
         if [ ! -f "$PWD/$private_pem_filename" ]; then
-          log_error "you should generate rsa private key first"
+          log::error "you should generate rsa private key first"
           exit 1
         fi
 
@@ -59,7 +59,7 @@ core() {
         exit 0
         ;;
       *)
-        log_error "ERROR: unknown parameter \"$key\", use -h for help"
+        log::error "ERROR: unknown parameter \"$key\", use -h for help"
         exit 1
         ;;
     esac
